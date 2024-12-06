@@ -36,6 +36,7 @@ from marker.cleaners.toc import compute_toc
 from typing import List, Dict, Tuple, Optional
 from marker.settings import settings
 
+settings.PAGINATE_OUTPUT = True
 
 def convert_single_pdf(
         fname: str,
@@ -170,4 +171,4 @@ def convert_single_pdf(
 
     doc_images = images_to_dict(pages)
 
-    return full_text, doc_images, out_meta
+    return full_text, doc_images, out_meta, pages, doc
